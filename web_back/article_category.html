@@ -234,7 +234,7 @@
 
             $('#editModal').modal('show')
         })
-        $("#model_save").click(function () {
+        $("#model_save").click(()=> {
             var name = $('#cate_edit_name').val().trim()
             var slug = $('#cate_edit_slug').val().trim()
             var id = $('#cate_edit_id').val().trim()
@@ -246,7 +246,7 @@
                 return;
             }
 
-            category.edit(id, name, slug, function (res) {
+            category.edit(id, name, slug,res=> {
                 console.log(res);
                 if (res.code == 200) {
                     $('#editModal').modal('hide')

@@ -95,7 +95,7 @@
 
     </script>
     <script>
-        category.show(function (res) {
+        category.show(res=>{
             console.log(res);
             var htmlStr = template('tmp_cate', res)
             $('#cate_container').html(htmlStr)
@@ -103,13 +103,13 @@
     </script>
     <script>
         // 添加功能实现
-        $('#btnAdd').click(function () {
+        $('#btnAdd').click(() => {
             // 1通过FromData收集信息
             // 2发送AJAX请求
             var fd = new FormData(document.getElementById('myfrom'));
             fd.append('state', '已发布');
             fd.set('content', tinyMCE.activeEditor.getContent())
-            article.lis(fd, res=> alert(res.msg))
+            article.lis(fd, res => alert(res.msg))
             // $.ajax({
             //     url: 'http://localhost:8000/admin/article_publish',
             //     processData: false,
